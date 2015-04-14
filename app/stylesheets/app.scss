@@ -18,7 +18,6 @@ body.landing {
 .hero-content {
     background: #2F1D57;
     padding: 100px 0;
-    color: #ffffff;
 }
 
 .hero-content h1 {
@@ -33,8 +32,6 @@ body.landing {
 
 .selling-points {
     padding: 100px 0;
-    color: #ffffff;
-    tetr
 }
 
 .selling-points .point {
@@ -64,7 +61,7 @@ body.landing {
    background-color: rgba(123, 70, 163, .9);
  }
 
-body .landing .navbar {
+body.landing .navbar {
     margin-bottom: 0px;
 }
 
