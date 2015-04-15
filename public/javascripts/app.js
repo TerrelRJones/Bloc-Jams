@@ -108,6 +108,8 @@ require('./landing');
       + '      <br/>'
       + '      X songs'
       + '      <br/>'
+      + '       X:XX Total Length'
+      + '      <br>'
       + '    </p>'
       + '  </div>'
       + '</div>';
@@ -122,6 +124,9 @@ require('./landing');
    for (var i = 0; i < 33; i++) {
      var $newThumbnail = buildAlbumThumbnail();
      $collection.append($newThumbnail);
+
+     // $newThumbnail(math.random() * (100 - 25) + 25);
+
    }
  };
 
