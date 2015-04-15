@@ -85,7 +85,7 @@
     //   $('changeAlbumView(albumPicasso').click (function() {
       //      var newAlbum = $(this).click();
         //        $(this).click('changeAlbumView(albumMarconi)')
-       //}
+       // }
 
 
 
