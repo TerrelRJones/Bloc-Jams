@@ -80,7 +80,15 @@
    // Wait until the HTML is fully processed.
    $(document).ready(function() {
 
-             changeAlbumView(albumPicasso);
+        changeAlbumView(albumPicasso);
+
+    //   $('changeAlbumView(albumPicasso').click (function() {
+      //      var newAlbum = $(this).click();
+        //        $(this).click('changeAlbumView(albumMarconi)')
+       //}
+
+
+
 
    });
  }
