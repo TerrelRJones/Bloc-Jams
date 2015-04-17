@@ -282,7 +282,7 @@ $row.find('.song-number').click(clickHandler);
 require('./landing');
     require('./collection');
         require('./album');
-            require('.profile');
+            require('./profile');
 });
 
 ;require.register("scripts/collection", function(exports, require, module) {
@@ -403,6 +403,15 @@ $(document) .ready(function(){
    $(selectedTabName).removeClass('hidden');
    event.preventDefault();
  };
+
+
+ if (document.URL.match(/\/profile.html/)) {
+   $(document).ready(function() {
+     var $tabs = $(tabsContainer + " a");
+     $tabs.click(selectTabHandler);
+     $tabs[0].click();
+   });
+ }
 });
 
 ;

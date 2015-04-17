@@ -14,3 +14,12 @@
    $(selectedTabName).removeClass('hidden');
    event.preventDefault();
  };
+
+
+ if (document.URL.match(/\/profile.html/)) {
+   $(document).ready(function() {
+     var $tabs = $(tabsContainer + " a");
+     $tabs.click(selectTabHandler);
+     $tabs[0].click();
+   });
+ }

@@ -231,6 +231,23 @@ td.song-number {
     margin-top: -10px;
     margin-left: -10px; }
 
+.default-button {
+  background-color: #d2287b;
+  color: white;
+  font-weight: 700;
+  border-radius: 5px;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  outline: none; }
+  .default-button:active {
+    background-color: #9b1d64;
+    outline: none; }
+  .default-button:disabled {
+    background-color: #b3b3b3;
+    cursor: not-allowed; }
+
 .user-profile-header {
   border: none;
   font-size: 24px;
@@ -287,23 +304,6 @@ td.song-number {
 
 .no-right-gutter {
   padding-right: 0px; }
-
-.default-button {
-  background-color: #d2287b;
-  color: white;
-  font-weight: 700;
-  border-radius: 5px;
-  border: none;
-  padding: 10px 20px;
-  font-size: 14px;
-  letter-spacing: 2px;
-  outline: none; }
-  .default-button:active {
-    background-color: #9b1d64;
-    outline: none; }
-  .default-button:disabled {
-    background-color: #b3b3b3;
-    cursor: not-allowed; }
 
 html {
   height: 100%; }
