@@ -357,11 +357,11 @@ $row.find('.song-number').click(clickHandler);
            }
        }]);
 
-         blocJams.controller('Album.controller', ['$scope', function($scope) {
+         blocJams.controller('Album.controller', ['$scope', 'SongPlayer' , function($scope, SongPlayer) {
            $scope.album = angular.copy(albumPicasso);
 
            var hoveredSong = null;
-           var playingSong = null;
+
 
            $scope.onHoverSong = function(song) {
              hoveredSong = song;
@@ -372,7 +372,7 @@ $row.find('.song-number').click(clickHandler);
            };
 
            $scope.getSongState = function(song) {
-             if (song === playingSong) {
+             if (song === SongPlayer.currentSong && songPlayer.playing) {
                return 'playing';
              }
              else if (song === hoveredSong) {
@@ -383,14 +383,38 @@ $row.find('.song-number').click(clickHandler);
 
 
            $scope.playSong = function(song) {
-            playingSong = song;
-          };
+             SongPlayer.setSong($scope.album, song);
+             SongPlayer.play();
+           };
 
-          $scope.pauseSong = function(song) {
-            playingSong = null;
+           $scope.pauseSong = function(song) {
+            songPlayer.pause();
           };
 
         }]);
+
+         blocJams.service('SongPlayer', function() {
+           return {
+             currentSong: null,
+             currentAlbum: null,
+             playing: false,
+
+             play: function() {
+               this.playing = true;
+             },
+             pause: function() {
+               this.playing = false;
+             },
+             setSong: function(album, song) {
+               this.currentAlbum = album;
+               this.currentSong = song;
+             }
+           };
+         });
+
+          blocJams.controller('PlayerBar.controller', ['$scope', 'SongPlayer', function($scope, SongPlayer) {
+   $scope.songPlayer = SongPlayer;
+ }]);
 });
 
 ;require.register("scripts/collection", function(exports, require, module) {
