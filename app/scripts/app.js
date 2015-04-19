@@ -4,6 +4,9 @@
            // require('./profile');
 
            angular.module('BlocJams', []).controller('Landing.controller', ['$scope', function($scope) {
+           $scope.title = 'Bloc Jams';
+
+
             $scope.subText = 'TURN THE MUSIC UP!';
             $scope.subTextClicked = function() {
                $scope.subText += '!';
