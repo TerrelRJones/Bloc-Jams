@@ -4,19 +4,21 @@
            // require('./profile');
 
             // Example album.
-            var albumPicasso = {
-             name: 'The Colors',
-             artist: 'Pablo Picasso',
-             label: 'Cubism',
-             year: '1881',
-             albumArtUrl: '/images/album-placeholder.png',
+            var albumPlantCity = {
+             name: 'Plant City',
+             artist: 'Will Jordan',
+             label: 'ASL',
+             year: '2015',
+             albumArtUrl: '/images/plantCity.png',
 
              songs: [
-             { name: 'Blue', length: 163.38, audioUrl: '/music/placeholders/blue' },
-             { name: 'Green', length: 105.66 , audioUrl: '/music/placeholders/green' },
-             { name: 'Red', length: 270.14, audioUrl: '/music/placeholders/red' },
-             { name: 'Pink', length: 154.81, audioUrl: '/music/placeholders/pink' },
-             { name: 'Magenta', length: 375.92, audioUrl: '/music/placeholders/magenta' }
+             { name: 'Intro', length: 42.0, audioUrl: '/music/placeholders/Get-Down-Intro' },
+             { name: 'Get Down', length: 196.0 , audioUrl: '/music/placeholders/Get-Down' },
+             { name: 'Home Alone', length: 214.0, audioUrl: '/music/placeholders/Home-Alone' },
+             { name: 'A Place Like This', length: 122.0, audioUrl: '/music/placeholders/A-Place-Like-This' },
+             { name: 'Wanna Be', length: 120.0, audioUrl: '/music/placeholders/Wanna-Be' },
+             { name: 'Forbidden Fruit', length: 202.0, audioUrl: '/music/placeholders/Forbidden-Fruit' },
+             { name: 'In My Arms', length: 362.0, audioUrl: '/music/placeholders/In-My-Arms' }
              ]
            };
 
@@ -47,7 +49,10 @@
 
            }]);
 
-           blocJams.controller('Landing.controller', ['$scope', function($scope) {
+            // Landing
+
+
+            blocJams.controller('Landing.controller', ['$scope', function($scope) {
              $scope.title = 'Bloc Jams';
 
 
@@ -57,22 +62,24 @@
              };
 
              $scope.albumURLs = [
-             '/images/album-placeholders/album-1.jpg',
-             '/images/album-placeholders/album-2.jpg',
-             '/images/album-placeholders/album-3.jpg',
-             '/images/album-placeholders/album-4.jpg',
-             '/images/album-placeholders/album-5.jpg',
-             '/images/album-placeholders/album-6.jpg',
-             '/images/album-placeholders/album-7.jpg',
-             '/images/album-placeholders/album-8.jpg',
-             '/images/album-placeholders/album-9.jpg',
+             '/images/album-placeholders/plantCity.jpg',
+             '/images/album-placeholders/toPimp.jpg',
+             '/images/album-placeholders/pinkPrint.jpg',
+             '/images/album-placeholders/forestHill.jpg',
+             '/images/album-placeholders/sundayMorning.jpg',
+             '/images/album-placeholders/yeezus.jpg',
+             '/images/album-placeholders/longLiveAsap.jpg',
+             '/images/album-placeholders/1800.jpg',
+             '/images/album-placeholders/ifYourReading.jpg',
              ];
            }]);
+
+           // Collections
 
            blocJams.controller('Collection.controller', ['$scope', 'SongPlayer' , function($scope, SongPlayer) {
              $scope.albums = [];
              for (var i = 0; i < 33; i++) {
-               $scope.albums.push(angular.copy(albumPicasso));
+               $scope.albums.push(angular.copy(albumPlantCity));
              }
 
              $scope.playAlbum = function(album){
@@ -81,8 +88,10 @@
 
  }]);
 
+           // Album
+
            blocJams.controller('Album.controller', ['$scope', 'SongPlayer' , function($scope, SongPlayer) {
-             $scope.album = angular.copy(albumPicasso);
+             $scope.album = angular.copy(albumPlantCity);
 
              var hoveredSong = null;
 
@@ -116,6 +125,8 @@
 
           }]);
 
+           // Song player
+
            blocJams.service('SongPlayer', ['$rootScope', function($rootScope) {
 
             var currentSoundFile = null;
@@ -128,7 +139,7 @@
              currentSong: null,
              currentAlbum: null,
              playing: false,
-                 volume: 90,
+             volume: 90,
 
              play: function() {
                this.playing = true;
@@ -171,14 +182,14 @@
        }
      },
 
-         setVolume: function(volume) {
+     setVolume: function(volume) {
       if(currentSoundFile){
         currentSoundFile.setVolume(volume);
       }
       this.volume = volume;
     },
 
-     onTimeUpdate: function(callback) {
+    onTimeUpdate: function(callback) {
       return $rootScope.$on('sound:timeupdate', callback);
     },
 
@@ -195,7 +206,7 @@
         preload: true
       });
 
-           currentSoundFile.setVolume(this.volume);
+      currentSoundFile.setVolume(this.volume);
 
       currentSoundFile.bind('timeupdate', function(e){
         $rootScope.$broadcast('sound:timeupdate', this.getTime());
@@ -206,16 +217,18 @@
   };
 }]);
 
+// Player Bar
+
 blocJams.controller('PlayerBar.controller', ['$scope', 'SongPlayer', function($scope, SongPlayer) {
  $scope.songPlayer = SongPlayer;
 
-   $scope.volumeClass = function() {
-     return {
-       'fa-volume-off': SongPlayer.volume === 0,
-       'fa-volume-down': SongPlayer.volume <= 70 && SongPlayer.volume > 0,
-       'fa-volume-up': SongPlayer.volume > 70
-     };
+ $scope.volumeClass = function() {
+   return {
+     'fa-volume-off': SongPlayer.volume === 0,
+     'fa-volume-down': SongPlayer.volume <= 70 && SongPlayer.volume > 0,
+     'fa-volume-up': SongPlayer.volume > 70
    };
+ };
 
  SongPlayer.onTimeUpdate(function(event, time){
    $scope.$apply(function(){
