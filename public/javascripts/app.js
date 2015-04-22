@@ -346,7 +346,7 @@ $row.find('.song-number').click(clickHandler);
              '/images/album-placeholders/plantCity.jpg',
              '/images/album-placeholders/toPimp.jpg',
              '/images/album-placeholders/pinkPrint.jpg',
-             '/images/album-placeholders/forestHill.jpg',
+             '/images/album-placeholders/zarterVi.jpg',
              '/images/album-placeholders/sundayMorning.jpg',
              '/images/album-placeholders/yeezus.jpg',
              '/images/album-placeholders/longLiveAsap.jpg',
