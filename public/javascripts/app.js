@@ -293,13 +293,31 @@ $row.find('.song-number').click(clickHandler);
              albumArtUrl: '/images/plantCity.png',
 
              songs: [
-             { name: 'Intro', length: 42.0, audioUrl: '/music/placeholders/Get-Down-Intro' },
-             { name: 'Get Down', length: 196.0 , audioUrl: '/music/placeholders/Get-Down' },
-             { name: 'Home Alone', length: 214.0, audioUrl: '/music/placeholders/Home-Alone' },
-             { name: 'A Place Like This', length: 122.0, audioUrl: '/music/placeholders/A-Place-Like-This' },
-             { name: 'Wanna Be', length: 120.0, audioUrl: '/music/placeholders/Wanna-Be' },
-             { name: 'Forbidden Fruit', length: 202.0, audioUrl: '/music/placeholders/Forbidden-Fruit' },
-             { name: 'In My Arms', length: 362.0, audioUrl: '/music/placeholders/In-My-Arms' }
+             { name: 'Intro', length: 42.0, audioUrl: '/music/placeholders/plantCity/Get-Down-Intro' },
+             { name: 'Get Down', length: 196.0 , audioUrl: '/music/placeholders/plantCity/Get-Down' },
+             { name: 'Home Alone', length: 214.0, audioUrl: '/music/placeholders/plantCity/Home-Alone' },
+             { name: 'A Place Like This', length: 122.0, audioUrl: '/music/placeholders/plantCity/A-Place-Like-This' },
+             { name: 'Wanna Be', length: 120.0, audioUrl: '/music/placeholders/plantCity/Wanna-Be' },
+             { name: 'Forbidden Fruit', length: 202.0, audioUrl: '/music/placeholders/plantCity/Forbidden-Fruit' },
+             { name: 'In My Arms', length: 362.0, audioUrl: '/music/placeholders/plantCity/In-My-Arms' }
+             ]
+           };
+
+                       var albumLIMBO = {
+             name: 'LIMBO',
+             artist: 'Will Jordan',
+             label: 'ASL',
+             year: '2015',
+             albumArtUrl: '/images/LIMBOcover.png',
+
+             songs: [
+             { name: 'Change', length: 201.0, audioUrl: '/music/placeholders/LIMBO/Change' },
+             { name: 'Light My Fire', length: 198.0 , audioUrl: '/music/placeholders/LIMBO/Light-My-Fire' },
+             { name: 'Bring Me Down', length: 132.0, audioUrl: '/music/placeholders/LIMBO/Bring-Me-Down' },
+             { name: 'Talk to Me', length: 40.0, audioUrl: '/music/placeholders/LIMBO/Talk-to-Me' },
+             { name: 'Watchin ft Zaddy Rxffin', length: 212.0, audioUrl: '/music/placeholders/LIMBO/Watchin' },
+             { name: 'In The Car', length: 32.0, audioUrl: '/music/placeholders/LIMBO/In-The-Car' },
+             { name: 'On The Run', length: 164.0, audioUrl: '/music/placeholders/LIMBO/On-The-Run' }
              ]
            };
 
@@ -359,9 +377,10 @@ $row.find('.song-number').click(clickHandler);
 
            blocJams.controller('Collection.controller', ['$scope', 'SongPlayer' , function($scope, SongPlayer) {
              $scope.albums = [];
-             for (var i = 0; i < 33; i++) {
-               $scope.albums.push(angular.copy(albumPlantCity));
-             }
+
+                $scope.albums.push(angular.copy(albumPlantCity));
+                $scope.albums.push(angular.copy(albumLIMBO));
+
 
              $scope.playAlbum = function(album){
      SongPlayer.setSong(album, album.songs[0]); // Targets first song in the array.
@@ -372,6 +391,7 @@ $row.find('.song-number').click(clickHandler);
            // Album
 
            blocJams.controller('Album.controller', ['$scope', 'SongPlayer' , function($scope, SongPlayer) {
+             $scope.album = angular.copy(albumLIMBO);
              $scope.album = angular.copy(albumPlantCity);
 
              var hoveredSong = null;
