@@ -1,15 +1,32 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:700,400);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:300,400);
 .hero-content {
-  background: #2f1d57;
-  padding: 100px 0; }
+  background-image: url("http://projectcasting1.projectcasting.netdna-cdn.com/wp-content/uploads/2014/12/kanye-west.jpg");
+  background-color: #080808;
+  background-position: left;
+  padding: 100px 0;
+  height: 650px; }
   .hero-content h1 {
-    font-size: 70px;
+    font-size: 60px;
     margin-bottom: 50px;
-    font-weight: 300px; }
+    font-weight: 700px;
+    color: #080808;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-delay: 1s;
+    -webkit-animation-iteration-count: 1; }
   .hero-content h3 {
-    font-weight: 300px; }
+    font-weight: 300px;
+    color: #080808;
+    font-family: 'Roboto Slab', serif;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-delay: 1s;
+    -webkit-animation-iteration-count: 1; }
 
 .selling-points {
-  padding: 100px 0; }
+  padding: 100px 0;
+  visibility: hidden; }
   .selling-points .point {
     width: 32%;
     float: left;
@@ -22,7 +39,38 @@
       height: 85px;
       text-transform: uppercase; }
     .selling-points .point p {
-      font-size: 14px; }
+      font-size: 14px;
+      text-align: center; }
+
+.landing-album-list img {
+  margin-top: 30px; }
+
+@media screen and (max-width: 400px) {
+  .hero-content {
+    background-image: url("http://projectcasting1.projectcasting.netdna-cdn.com/wp-content/uploads/2014/12/kanye-west.jpg");
+    background-color: #080808;
+    background-attachment: fixed;
+    background-position: center;
+    padding: 100px 0; }
+    .hero-content h1 {
+      font-size: 70px;
+      margin-bottom: 50px;
+      font-weight: 300px;
+      text-align: center;
+      color: white; }
+    .hero-content h3 {
+      font-weight: 300px;
+      text-align: center;
+      color: white; }
+  .selling-points .point {
+    display: block;
+    float: left; }
+    .selling-points .point h5 {
+      font-size: 20px; }
+    .selling-points .point p {
+      display: none; }
+  .landing-album-list img {
+    margin-top: 20px; } }
 
 .album-header-container {
   margin-top: 55px;
@@ -341,8 +389,8 @@ body {
   font-family: 'Open Sans';
   color: white;
   min-height: 100%;
-  background: -webkit-radial-gradient(#2b1339, #380c77);
-  background: radial-gradient(#2b1339, #380c77);
+  background: -webkit-radial-gradient(#380c77, #080808);
+  background: radial-gradient(#380c77, #080808);
   padding-bottom: 150px; }
 
 body.landing {
@@ -350,7 +398,8 @@ body.landing {
   padding-bottom: 0; }
 
 .player-header-nav {
-  background-color: rgba(123, 70, 163, 0.9); }
+  background-color: transparent;
+  margin-bottom: 0px; }
   .player-header-nav .navbar-nav a {
     line-height: 45px;
     color: white;
@@ -361,7 +410,8 @@ body.landing {
       color: rgba(123, 70, 163, 0.9); }
 
 body.landing .navbar {
-  margin-bottom: 0px; }
+  margin-bottom: 0px;
+  padding: 0px; }
 
 
 /*# sourceMappingURL=app.css.map*/

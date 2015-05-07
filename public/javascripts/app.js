@@ -355,7 +355,7 @@ $row.find('.song-number').click(clickHandler);
              $scope.title = 'Bloc Jams';
 
 
-             $scope.subText = 'TURN THE MUSIC UP!';
+             $scope.subText = 'Turn the music up!';
              $scope.subTextClicked = function() {
                $scope.subText += '!';
              };
@@ -371,6 +371,9 @@ $row.find('.song-number').click(clickHandler);
              '/images/album-placeholders/1800.jpg',
              '/images/album-placeholders/ifYourReading.jpg',
              ];
+
+
+
            }]);
 
            // Collections
@@ -770,6 +773,8 @@ $(document) .ready(function(){
            };
 
            $('.selling-points .point').hover(onHoverAction, offHoverAction);
+
+
 
 });
 });

@@ -2,7 +2,9 @@
   "name": "your-app",
   "version": "0.0.1",
   "main": "public/app.js",
-  "dependencies": {},
+  "dependencies": {
+    "bootstrap": "~3.3.4"
+  },
   "overrides": {},
   "devDependencies": {
     "angular": "1.2.15",

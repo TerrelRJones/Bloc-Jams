@@ -74,7 +74,7 @@
              $scope.title = 'Bloc Jams';
 
 
-             $scope.subText = 'TURN THE MUSIC UP!';
+             $scope.subText = 'Turn the music up!';
              $scope.subTextClicked = function() {
                $scope.subText += '!';
              };
@@ -90,6 +90,9 @@
              '/images/album-placeholders/1800.jpg',
              '/images/album-placeholders/ifYourReading.jpg',
              ];
+
+
+
            }]);
 
            // Collections

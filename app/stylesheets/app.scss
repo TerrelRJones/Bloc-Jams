@@ -14,8 +14,8 @@
     font-family: 'Open Sans' ;
     color: white;
     min-height: 100%;
-    background: -webkit-radial-gradient(  #2b1339, #380c77);
-    background: radial-gradient(   #2b1339, #380c77);
+    background: -webkit-radial-gradient(  #380c77, #080808);
+    background: radial-gradient(   #380c77, #080808);
     padding-bottom: 150px;
   }
 
@@ -29,7 +29,8 @@
  // Nav Bar
 
  .player-header-nav {
-   background-color: rgba(123, 70, 163, .9);
+   background-color: transparent;
+   margin-bottom: 0px;
    .navbar-nav {
     a {
       line-height: 45px;
@@ -47,5 +48,6 @@
 
 body.landing .navbar {
   margin-bottom: 0px;
+  padding: 0px;
 }
 
