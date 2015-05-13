@@ -4,6 +4,7 @@
   background-image: url("http://projectcasting1.projectcasting.netdna-cdn.com/wp-content/uploads/2014/12/kanye-west.jpg");
   background-color: #080808;
   background-position: left;
+  background-size: cover;
   padding: 100px 0;
   height: 650px; }
   .hero-content h1 {
