@@ -303,23 +303,6 @@ $row.find('.song-number').click(clickHandler);
              ]
            };
 
-                       var albumLIMBO = {
-             name: 'LIMBO',
-             artist: 'Will Jordan',
-             label: 'ASL',
-             year: '2015',
-             albumArtUrl: '/images/LIMBOcover.png',
-
-             songs: [
-             { name: 'Change', length: 201.0, audioUrl: '/music/placeholders/LIMBO/Change' },
-             { name: 'Light My Fire', length: 198.0 , audioUrl: '/music/placeholders/LIMBO/Light-My-Fire' },
-             { name: 'Bring Me Down', length: 132.0, audioUrl: '/music/placeholders/LIMBO/Bring-Me-Down' },
-             { name: 'Talk to Me', length: 40.0, audioUrl: '/music/placeholders/LIMBO/Talk-to-Me' },
-             { name: 'Watchin ft Zaddy Rxffin', length: 212.0, audioUrl: '/music/placeholders/LIMBO/Watchin' },
-             { name: 'In The Car', length: 32.0, audioUrl: '/music/placeholders/LIMBO/In-The-Car' },
-             { name: 'On The Run', length: 164.0, audioUrl: '/music/placeholders/LIMBO/On-The-Run' }
-             ]
-           };
 
 
            blocJams = angular.module('BlocJams', ['ui.router']);
@@ -382,7 +365,6 @@ $row.find('.song-number').click(clickHandler);
              $scope.albums = [];
 
                 $scope.albums.push(angular.copy(albumPlantCity));
-                $scope.albums.push(angular.copy(albumLIMBO));
 
 
              $scope.playAlbum = function(album){
