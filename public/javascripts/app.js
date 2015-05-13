@@ -376,7 +376,6 @@ $row.find('.song-number').click(clickHandler);
            // Album
 
            blocJams.controller('Album.controller', ['$scope', 'SongPlayer' , function($scope, SongPlayer) {
-             $scope.album = angular.copy(albumLIMBO);
              $scope.album = angular.copy(albumPlantCity);
 
              var hoveredSong = null;
